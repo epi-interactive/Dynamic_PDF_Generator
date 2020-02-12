@@ -1,0 +1,32 @@
+\documentclass[10pt,a4paper]{report}
+\setlength\parindent{0pt}
+
+%\UseRawInputEncoding
+
+\usepackage[margin=0.8in]{geometry}
+
+
+
+\begin{document}
+% ###################################################### PAGE 1: SUMMARY #######################################################
+% ======================================================== SPLASH TEXT =======================================================
+\begin{center}
+\Huge\noindent\textbf{A dynamic PDF Report}  
+
+\vspace{0.5em}
+\LARGE{Epi-interactive}
+
+\end{center}
+\vspace{0.5em}
+
+\large{\today}\
+\vspace{1em}
+
+
+\noindent This is a sample PDF generator. The following chart is generated directly from Shiny reactive outputs.\\
+
+<<plot_example_1_chart, fig = TRUE , echo = FALSE, warning=FALSE, out.width='1.6\\textwidth', fig.align='left', out.height='0.8\\textheight'>>=
+ plot_function(input$plot_example_1_n, input$plot_example_1_mean)
+@
+
+\end{document}
