@@ -10,7 +10,8 @@ function(input, output) {
       layout(xaxis = list(visible=T, showgrid=F, showline=T, mirror=T,
                           zeroline=F, zerolinecolor="#fff", title = paste0("norm(", n, ")")),
              yaxis = list(visible=T, showgrid=F, showline=T, mirror=T,
-                          zeroline=F, zerolinecolor="#fff"))
+                          zeroline=F, zerolinecolor="#fff"),
+             showlegend = FALSE)
   }
   
   plot_example_1_chart <- reactive({plot_function(input$plot_example_1_n, input$plot_example_1_mean)})
