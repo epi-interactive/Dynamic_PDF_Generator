@@ -7,7 +7,7 @@ You can try out the app [here](https://shiny.epi-interactive.com/apps/dynamic_pd
 <kbd>![alt text](dynamic_pdf_generator.PNG)</kbd>
 
 ## How it works
-Wrap your reactive chart(table...) in a function with user inputs as parameters:
+1. Wrap your reactive chart(table...) in a function with user inputs as parameters:
 
 ``` r
 plot_function <- function(n, mean) {
@@ -24,14 +24,14 @@ plot_function <- function(n, mean) {
 
 ```
 
-In report.Rnw, reference the chart in the following way:
+2. In report.Rnw, reference the chart in the following way:
 ``` r
 <<plot_example_1_chart, fig = TRUE , echo = FALSE, warning=FALSE, fig.align='left', out.height='0.8\\textheight'>>=
  plot_function(input$plot_example_1_n, input$plot_example_1_mean)
 @
 ```
 
-Allows content from the Shiny application to be made available to the user as file downloads. Both filename and contents can be calculated dynamically at the time the user initiates the download. Assign the return value to a slot on output in your server function, and in the UI use downloadButton or downloadLink to make the download available.
+3. Allows content from the Shiny application to be made available to the user as file downloads. Both filename and contents can be calculated dynamically at the time the user initiates the download. Assign the return value to a slot on output in your server function, and in the UI use downloadButton or downloadLink to make the download available.
 
 In ui.R:
 
