@@ -57,3 +57,7 @@ output$downloadReport <- downloadHandler(
     }
   )
   ```
+  
+  # Sources
+- [R Studio Shiny Examples](https://github.com/rstudio/shiny-examples/tree/master/016-knitr-pdf)
+
