@@ -11,10 +11,10 @@
 % ###################################################### PAGE 1: SUMMARY #######################################################
 % ======================================================== SPLASH TEXT =======================================================
 \begin{center}
-\Huge\noindent\textbf{A dynamic PDF Report}  
+\Huge\noindent\textbf{A Dynamic PDF Report}  
 
 \vspace{0.5em}
-\LARGE{Epi-interactive}
+\LARGE{EPI-interactive}
 
 \end{center}
 \vspace{0.5em}
