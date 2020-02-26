@@ -33,15 +33,13 @@ plot_function <- function(n, mean) {
 
 3. Allows content from the Shiny application to be made available to the user as file downloads. Both filename and contents can be calculated dynamically at the time the user initiates the download. Assign the return value to a slot on output in your server function, and in the UI use downloadButton or downloadLink to make the download available.
 
-In ui.R:
+
 
 ```
+# In ui.R:
 downloadButton('downloadReport')
-```
 
-In server.R:
-
-```
+# In server.R:
 output$downloadReport <- downloadHandler(
     filename = "report.pdf",
     
