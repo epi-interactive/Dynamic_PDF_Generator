@@ -30,3 +30,32 @@ In report.Rnw, reference the chart in the following way:
  plot_function(input$plot_example_1_n, input$plot_example_1_mean)
 @
 ```
+
+Allows content from the Shiny application to be made available to the user as file downloads. Both filename and contents can be calculated dynamically at the time the user initiates the download. Assign the return value to a slot on output in your server function, and in the UI use downloadButton or downloadLink to make the download available.
+
+In ui.R:
+
+```
+downloadButton('downloadReport')
+```
+
+In server.R:
+
+```
+output$downloadReport <- downloadHandler(
+    filename = "report.pdf",
+    
+    content = function(file) {
+      src <- normalizePath('report.Rnw')
+      
+      # temporarily switch to the temp dir, in case you do not have write
+      # permission to the current working directory
+      owd <- setwd(tempdir())
+      on.exit(setwd(owd))
+      file.copy(src, 'report.Rnw', overwrite = TRUE)
+      
+      out = knit2pdf('report.Rnw', clean = TRUE)
+      file.rename(out, file) 
+    }
+  )
+  ```
