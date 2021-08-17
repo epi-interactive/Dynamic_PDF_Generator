@@ -7,9 +7,6 @@
 
 library(knitr)
 
-
-if (is.null(suppressMessages(webshot:::find_phantom()))) { webshot::install_phantomjs() }
-
 function(input, output) {
   plot_function <- function(n, mean) {
     plot_ly(x = ~rnorm(n), type = "box") %>%
