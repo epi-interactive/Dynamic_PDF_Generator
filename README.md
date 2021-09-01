@@ -1,4 +1,4 @@
-# dynamic_pdf_generator
+# Dynamic PDF Generator
 
 This app demonstrates how to generate a PDF report directly from Shiny reactive outputs. The parameters of the plotly chart in the PDF file will be the same as the user inputs. 
 
