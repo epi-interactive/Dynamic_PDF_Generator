@@ -19,6 +19,6 @@ fluidPage(
     tags$img(src="images/Powered_Epi_Logo.png", width= "90%")
   ),
   div(class="col-xs-9 main",
-    plotlyOutput("plot_example_1", width="800px")
+    plotlyOutput("plot_example_1", width="800px", height = "550px")
   )
 )
