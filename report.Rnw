@@ -25,7 +25,7 @@
 
 \noindent This is a sample PDF generator. The following chart is generated directly from Shiny reactive outputs.\\
 
-<<plot_example_1_chart, fig = TRUE , echo = FALSE, warning=FALSE, fig.align='left', out.height='0.8\\textheight'>>=
+<<plot_example_1_chart, fig = TRUE , echo = FALSE, warning=FALSE, out.width="100%">>=
  plot_function(input$plot_example_1_n, input$plot_example_1_mean)
 @
 

@@ -4,18 +4,50 @@
 # https://www.epi-interactive.com
 ##################################
 
-
-library(knitr)
-
 function(input, output) {
   plot_function <- function(n, mean) {
-    plot_ly(x = ~rnorm(n), type = "box") %>%
-      add_trace(x = ~rnorm(n, mean)) %>% 
-      layout(xaxis = list(visible=T, showgrid=F, showline=T, mirror=T,
-                          zeroline=F, zerolinecolor="#fff", title = paste0("norm(", n, ")")),
-             yaxis = list(visible=T, showgrid=F, showline=T, mirror=T,
-                          zeroline=F, zerolinecolor="#fff"),
-             showlegend = FALSE)
+    x <- list(visible=T, 
+              showgrid=F, 
+              showline=T, 
+              mirror=T,
+              zeroline=F, 
+              zerolinecolor="#fff", 
+              title = paste0("<b>Norm(", n, ")</b>"))
+    y <- list(visible=T, 
+              showgrid=F, 
+              showline=T, 
+              mirror=T,
+              zeroline=F, 
+              zerolinecolor="#fff",
+              categoryarray = c("<b>Trace 1</b>", "<b>Trace 2</b>"), 
+              categoryorder = "array")
+    
+    hoverlabel <- list(
+      bgcolor = "white", 
+      bordercolor = "black",
+      align = "left",
+      font=list(
+        size = 14,
+        color = "black")
+    )
+    
+    plot_ly(type = "box") %>%
+      add_trace(x = ~rnorm(n), 
+                name = "<b>Trace 1</b>",
+                fillcolor = '#CEF0F4',
+                marker = list(color = '#01515E'),
+                line = list(color = '#01515E')
+                ) %>% 
+      add_trace(x = ~rnorm(n, mean), 
+                name = "<b>Trace 2</b>",
+                marker = list(color = '#D66100'),
+                fillcolor = '#FBF2DC',
+                line = list(color = '#D66100')
+                ) %>% 
+      layout(xaxis = x,
+             yaxis = y,
+             showlegend = FALSE,
+             hoverlabel = hoverlabel)
   }
   
   plot_example_1_chart <- reactive({plot_function(input$plot_example_1_n, input$plot_example_1_mean)})
