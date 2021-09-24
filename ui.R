@@ -10,7 +10,7 @@ fluidPage(
   ),
   div(class="col-xs-3 sidebar",
     div(
-      h1("Image Downloader"),
+      h1("PDF Generator"),
       hr(),
       numericInput("plot_example_1_n", "Number of datasets to be simulated", 50, 25, 100, 5),
       numericInput("plot_example_1_mean", "The mean of the dataset to be simulated", 5, 1, 10, 1),
