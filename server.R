@@ -6,17 +6,15 @@
 
 function(input, output) {
   plot_function <- function(n, mean) {
-    x <- list(visible=T, 
-              showgrid=F, 
+    y <- list(visible=T, 
+              showgrid=T, 
               showline=T, 
-              mirror=T,
               zeroline=F, 
               zerolinecolor="#fff", 
               title = paste0("<b>Norm(", n, ")</b>"))
-    y <- list(visible=T, 
+    x <- list(visible=T, 
               showgrid=F, 
               showline=T, 
-              mirror=T,
               zeroline=F, 
               zerolinecolor="#fff",
               categoryarray = c("<b>Trace 1</b>", "<b>Trace 2</b>"), 
@@ -32,13 +30,13 @@ function(input, output) {
     )
     
     plot_ly(type = "box") %>%
-      add_trace(x = ~rnorm(n), 
+      add_trace(y = ~rnorm(n), 
                 name = "<b>Trace 1</b>",
                 fillcolor = '#CEF0F4',
                 marker = list(color = '#01515E'),
                 line = list(color = '#01515E')
                 ) %>% 
-      add_trace(x = ~rnorm(n, mean), 
+      add_trace(y = ~rnorm(n, mean), 
                 name = "<b>Trace 2</b>",
                 marker = list(color = '#D66100'),
                 fillcolor = '#FBF2DC',

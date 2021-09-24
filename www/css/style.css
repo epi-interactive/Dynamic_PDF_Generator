@@ -39,7 +39,7 @@ hr{
   color: #00ADD8;
 }
 
-.shiny-input-container:not(.shiny-input-container-inline) {
+.sidebar .shiny-input-container:not(.shiny-input-container-inline) {
     width: 100%;
     margin-bottom: 45px;
 }
@@ -47,4 +47,6 @@ hr{
 .main{
     padding: 0 50px;
     padding-top: 120px;
+    display: flex;
+    justify-content: center;
 }
