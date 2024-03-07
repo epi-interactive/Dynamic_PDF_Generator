@@ -6,3 +6,4 @@
 
 library(plotly)
 library(knitr)
+library(webshot)
